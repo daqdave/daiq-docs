@@ -14,7 +14,7 @@ Use the navigation on the left to browse articles, or the search box at the top 
 
 Browse the full list in the left-hand navigation, or jump to one of the articles below:
 
-- [How To Shrink SQL Database Log Files](./how-to-shrink-sql-database-log-files/)
+- [How To Shrink SQL Database Log Files](./docs/how-to-shrink-sql-database-log-files/)
 
 ## Copyright
 
