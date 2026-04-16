@@ -6,8 +6,6 @@ nav_order: 10
 
 # How To Shrink SQL Database Log Files
 
-*Copyright © 2024 DAQ Electronics*
-
 ## Introduction
 
 This document explains how to shrink the database log file on a SQL Server database.
@@ -63,3 +61,7 @@ The log file will be reduced to 1MB.
 Restore the database to “FULL”.
 
 ![HowToShrinkSQLDatabaseLogFiles image 08](./images/HowToShrinkSQLDatabaseLogFiles_08.png)
+
+---
+
+*© DAQ Electronics, LLC*
