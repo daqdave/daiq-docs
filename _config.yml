@@ -1,0 +1,34 @@
+# Site settings
+title: DAQ Electronics Support Docs
+description: Customer support documentation for DAQ Electronics products.
+# Replace this with your actual GitHub Pages URL once the repo is created:
+# url: "https://<your-github-username-or-org>.github.io"
+# baseurl: "/daiq-docs"
+
+# Use the Just-the-Docs theme for a clean, searchable documentation site.
+# This is a remote theme so GitHub Pages will build it without extra config.
+remote_theme: just-the-docs/just-the-docs
+
+# Just-the-Docs options
+search_enabled: true
+search:
+  heading_level: 3
+  previews: 2
+  preview_words_before: 3
+  preview_words_after: 3
+
+color_scheme: light
+
+heading_anchors: true
+
+# Don't process these when Jekyll builds the site
+exclude:
+  - README.md
+  - scripts/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .gitignore
+
+plugins:
+  - jekyll-remote-theme

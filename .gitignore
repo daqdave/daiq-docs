@@ -1,0 +1,23 @@
+# Jekyll / GitHub Pages
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+Gemfile.lock
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Source PDFs are not stored in the repo by default.
+# Remove the next line if you want the PDFs checked in too.
+source_pdfs/
