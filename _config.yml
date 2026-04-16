@@ -1,9 +1,8 @@
 # Site settings
 title: DAQ Electronics Support Docs
 description: Customer support documentation for DAQ Electronics products.
-# Replace this with your actual GitHub Pages URL once the repo is created:
-# url: "https://<your-github-username-or-org>.github.io"
-# baseurl: "/daiq-docs"
+url: "https://daqdave.github.io"
+baseurl: "/daiq-docs"
 
 # Use the Just-the-Docs theme for a clean, searchable documentation site.
 # This is a remote theme so GitHub Pages will build it without extra config.
