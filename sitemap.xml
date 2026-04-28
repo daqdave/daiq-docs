@@ -1,0 +1,30 @@
+---
+layout: null
+permalink: /sitemap.xml
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+{%- assign image_exts = ".png,.jpg,.jpeg,.gif,.webp" | split: "," -%}
+{%- for page in site.html_pages -%}
+{%- if page.sitemap == false -%}{%- continue -%}{%- endif -%}
+{%- assign img_dir = page.dir | append: "images/" %}
+  <url>
+    <loc>{{ page.url | replace: "index.html", "" | absolute_url }}</loc>
+{%- if page.last_modified_at %}
+    <lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>
+{%- endif -%}
+{%- for file in site.static_files -%}
+{%- if file.dir == img_dir -%}
+{%- assign ext = file.extname | downcase -%}
+{%- if image_exts contains ext %}
+    <image:image>
+      <image:loc>{{ file.path | absolute_url }}</image:loc>
+    </image:image>
+{%- endif -%}
+{%- endif -%}
+{%- endfor %}
+  </url>
+{% endfor -%}
+</urlset>
