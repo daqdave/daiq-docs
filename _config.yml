@@ -23,6 +23,7 @@ heading_anchors: true
 # Don't process these when Jekyll builds the site
 exclude:
   - README.md
+  - SETUP-GUIDE.md
   - scripts/
   - Gemfile
   - Gemfile.lock
