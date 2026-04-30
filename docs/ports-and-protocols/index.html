@@ -1,0 +1,145 @@
+---
+layout: default
+title: StarWatch SMS Ports and Protocols
+nav_order: 20
+---
+{% raw %}
+<h1 id="starwatch-sms-ports-and-protocols">StarWatch SMS Ports and Protocols</h1>
+<p>Technical reference listing the network ports, transports, encryption, session types, applications, usage, wire protocols, and proprietors involved in a StarWatch SMS deployment.</p>
+<p><em>Rev. 001</em></p>
+<table>
+<thead>
+<tr>
+<th>Port</th>
+<th>Transport</th>
+<th>Encryption</th>
+<th>Session</th>
+<th>Application</th>
+<th>Usage</th>
+<th>Protocol</th>
+<th>Proprietary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6543</td>
+<td>TCP</td>
+<td>FIPS 102-3</td>
+<td>WCF</td>
+<td>SMS Client/Server</td>
+<td>Viewing and modifying SMS database data</td>
+<td>Private</td>
+<td>DAQ</td>
+</tr>
+<tr>
+<td>6123</td>
+<td>TCP</td>
+<td>FIPS 102-3</td>
+<td>WCF</td>
+<td>SMS Notifications</td>
+<td>Receiving database change notifications</td>
+<td>Private</td>
+<td>DAQ</td>
+</tr>
+<tr>
+<td>7101</td>
+<td>TCP</td>
+<td>FIPS 102-3</td>
+<td>WCF</td>
+<td>SMS Messaging</td>
+<td>Distributing real-time data</td>
+<td>Orbit.NET</td>
+<td>DAQ</td>
+</tr>
+<tr>
+<td>4662</td>
+<td>TCP</td>
+<td>FIPS 102-3</td>
+<td>WCF</td>
+<td>Site Browser</td>
+<td>Diagnostic real-time network browsing</td>
+<td>Orbit.NET</td>
+<td>DAQ</td>
+</tr>
+<tr>
+<td>47808</td>
+<td>UDP</td>
+<td>BACnet Security (optional)</td>
+<td>UDP Socket</td>
+<td>BACnet Browser</td>
+<td>Diagnostic real-time BACnet browsing</td>
+<td>BACnet/IP</td>
+<td>ASHRAE</td>
+</tr>
+<tr>
+<td>47809</td>
+<td>UDP</td>
+<td>BACnet Security (optional)</td>
+<td>UDP Socket</td>
+<td>EntroStar Driver</td>
+<td>Communication with EntroStar panels</td>
+<td>BACnet/IP</td>
+<td>ASHRAE</td>
+</tr>
+<tr>
+<td>47810</td>
+<td>UDP</td>
+<td>BACnet Security</td>
+<td>UDP Socket</td>
+<td>Site Planner / Builder</td>
+<td>Discovery via BACnet of EntroStar panels</td>
+<td>BACnet/IP</td>
+<td>ASHRAE</td>
+</tr>
+<tr>
+<td>48700</td>
+<td>UDP</td>
+<td>Class-B</td>
+<td>UDP Socket</td>
+<td>RPI Driver</td>
+<td>Communication with ICIDS panels</td>
+<td>RPI/IP</td>
+<td>DAQ</td>
+</tr>
+<tr>
+<td>50231</td>
+<td>UDP</td>
+<td>RSA 512-bit</td>
+<td>Multicast Groups</td>
+<td>DAQ Panel Net Config</td>
+<td>Discovery and network configuration of all DAQ panels</td>
+<td>DAQ Discovery</td>
+<td>DAQ</td>
+</tr>
+<tr>
+<td>1433</td>
+<td>TCP</td>
+<td>TLS 1.2–1.2 with Certificates</td>
+<td>TCP</td>
+<td>SQL Server / Clients</td>
+<td>Asure ID badging on workstations</td>
+<td>Private</td>
+<td>Microsoft</td>
+</tr>
+<tr>
+<td>1434</td>
+<td>UDP</td>
+<td>None</td>
+<td>UDP Socket</td>
+<td>SQL Server Browser/Clients</td>
+<td>Remote browsing and connection to SQL Server (may be needed for Asure ID)</td>
+<td>Private</td>
+<td>Microsoft</td>
+</tr>
+</tbody>
+</table>
+<h2 id="notes">Notes</h2>
+<ul>
+<li><strong>FIPS 102-3</strong> denotes DAQ's internal FIPS-compliant encryption profile used across the SMS WCF channels (ports 6543, 6123, 7101, 4662).</li>
+<li><strong>BACnet Security</strong> on ports 47808 and 47809 is optional and typically enabled only when the deployment requires it; port 47810 always uses BACnet Security for discovery.</li>
+<li><strong>Asure ID</strong> workstations require outbound access to SQL (port 1433) and, for remote browsing, port 1434.</li>
+<li>DAQ-proprietary ports (6543, 6123, 7101, 4662, 48700, 50231) should be opened only on the segments carrying StarWatch SMS traffic.</li>
+</ul>
+<hr />
+<p><em>© DAQ Electronics, LLC</em></p>
+{% endraw %}

@@ -4,26 +4,11 @@ permalink: /sitemap.xml
 sitemap: false
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-{%- assign image_exts = ".png,.jpg,.jpeg,.gif,.webp,.svg" | split: "," -%}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for page in site.html_pages -%}
-{%- if page.sitemap == false -%}{%- continue -%}{%- endif -%}
-{%- assign img_dir = page.dir | append: "images/" -%}
-{%- assign dir_len = img_dir | size %}
+{%- if page.sitemap == false -%}{%- continue -%}{%- endif %}
   <url>
     <loc>{{ page.url | replace: "index.html", "" | absolute_url }}</loc>
-{%- for file in site.static_files -%}
-{%- assign ext = file.extname | downcase -%}
-{%- if image_exts contains ext -%}
-{%- assign prefix = file.path | slice: 0, dir_len -%}
-{%- if prefix == img_dir %}
-    <image:image>
-      <image:loc>{{ file.path | absolute_url }}</image:loc>
-    </image:image>
-{%- endif -%}
-{%- endif -%}
-{%- endfor %}
   </url>
-{% endfor -%}
+{%- endfor %}
 </urlset>

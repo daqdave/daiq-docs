@@ -29,6 +29,14 @@ exclude:
   - Gemfile.lock
   - vendor/
   - .gitignore
+  # Old per-article markdown source — superseded by index.html with embedded
+  # images. Excluded so Jekyll renders only the HTML and avoids URL collisions
+  # between docs/<slug>/index.md and docs/<slug>/index.html.
+  - "docs/*/index.md"
+  # Old per-article image folders — images are now base64-embedded in the HTML.
+  # These folders may still exist on disk in legacy clones; excluded so Jekyll
+  # does not copy ~230 MB of redundant images into the published site.
+  - "docs/*/images"
 
 plugins:
   - jekyll-remote-theme
